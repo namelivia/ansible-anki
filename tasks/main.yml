@@ -1,0 +1,36 @@
+---
+- name: Create the data directory
+  file:
+    path: "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data"
+    state: directory
+
+- name: Create app container
+  docker_container:
+    name: "{{application_name}}-app"
+    image: "kuklinistvan/anki-sync-server"
+    restart_policy: "always"
+    memory: "100MB"
+    exposed_ports:
+      - "27701"
+    volumes:
+        - "{{ hostvars[inventory_hostname].working_directory }}{{ application_name }}/files/data:/app/data"
+    log_driver: "awslogs"
+    log_options:
+        awslogs-region: "{{cloudwatch_region}}"
+        awslogs-group: "{{cloudwatch_log_group}}"
+        awslogs-stream: "{{application_name}}"
+    env:
+      VIRTUAL_HOST: "{{ domain_name }}"
+      LETSENCRYPT_HOST: "{{ domain_name }}"
+      VIRTUAL_PORT: "27701"
+
+- name: Setup file backups
+  include_role:
+    name: namelivia.backups
+    tasks_from: setup-file-backups
+  vars:
+    backup_day: {{backup_day}}
+
+- include_role:
+    name: namelivia.backups
+    tasks_from: setup-s3-backups

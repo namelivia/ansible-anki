@@ -1,0 +1,8 @@
+galaxy_info:
+  role_name: namelivia.itemtree
+  author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
+  description: Ansible role I use to install and configure kuklinistvan/anki-sync-server
+  license: GPLv2
+  min_ansible_version: 2.5.1
+  dependencies:
+    - namelivia.backups
