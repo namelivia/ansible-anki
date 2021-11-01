@@ -28,8 +28,6 @@
   include_role:
     name: namelivia.backups
     tasks_from: setup-file-backups
-  vars:
-    backup_day: "{{backup_day}}"
 
 - include_role:
     name: namelivia.backups
