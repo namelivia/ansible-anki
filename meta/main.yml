@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: ansible-anki
+  role_name: anki
   author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
   description: Ansible role I use to install and configure kuklinistvan/anki-sync-server
   license: GPLv2
