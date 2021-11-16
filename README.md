@@ -11,7 +11,7 @@ collections:
   - community.docker
 
 roles:
-  - src: https://github.com/namelivia/namelivia.anki
+  - src: https://github.com/namelivia/ansible-anki
 ```
 
 ## Required variables
