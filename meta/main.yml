@@ -6,3 +6,8 @@ galaxy_info:
   min_ansible_version: 2.5.1
   dependencies:
     - namelivia.backups
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
