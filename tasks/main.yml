@@ -7,7 +7,6 @@
       - cloudwatch_region is defined
       - cloudwatch_log_group is defined
       - domain_name is defined
-      - dump_day is defined
       - backup_day is defined
 
 - name: Create the data directory
@@ -40,7 +39,7 @@
     name: namelivia.backups
     tasks_from: setup-file-backups
 
-- name: Setup file backups
+- name: Setup S3 backups
   include_role:
     name: namelivia.backups
     tasks_from: setup-s3-backups
