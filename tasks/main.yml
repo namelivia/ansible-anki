@@ -37,10 +37,10 @@
 
 - name: Setup file backups
   include_role:
-    name: namelivia.backups
+    name: ansible-backups
     tasks_from: setup-file-backups
 
 - name: Setup S3 backups
   include_role:
-    name: namelivia.backups
+    name: ansible-backups
     tasks_from: setup-s3-backups
