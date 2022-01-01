@@ -20,6 +20,7 @@
     name: "{{ application_name }}-app"
     image: "kuklinistvan/anki-sync-server:latest"
     restart_policy: "always"
+    cleanup: true
     memory: "100MB"
     exposed_ports:
       - "27701"
