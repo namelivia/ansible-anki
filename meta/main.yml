@@ -1,11 +1,10 @@
 galaxy_info:
   role_name: anki
+  namespace: namelivia
   author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
   description: Ansible role I use to install and configure kuklinistvan/anki-sync-server
   license: GPLv2
   min_ansible_version: 2.5.1
-  dependencies:
-    - role: backups
   platforms:
     - name: Ubuntu
       versions:
