@@ -6,8 +6,8 @@ jobs:
   ansible-lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Lint Ansible Playbook
-      uses: ansible-community/ansible-lint-action@main
-      with:
-        path: "."
+      - uses: actions/checkout@v2
+      - name: Lint Ansible Playbook
+        uses: ansible-community/ansible-lint-action@main
+        with:
+          path: "."
